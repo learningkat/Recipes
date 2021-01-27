@@ -1,0 +1,16 @@
+﻿@page
+@model RecipesVersion2.Pages.RecipeDisplay.IndexModel
+
+@{
+    ViewData["Title"] = "lksjldakdlasjd";
+}
+
+<h1>Index</h1>
+
+
+        @foreach (var item in Model.Instruction)
+        {
+            <p>
+                    @Html.DisplayFor(modelItem => item.InstructionText)
+               </p>
+        }
