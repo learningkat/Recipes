@@ -16,5 +16,6 @@ namespace RecipesVersion2.Models
         public string Cuisine { get; set; }
         public string Course { get; set; }
         public string Url { get; set; }
+        public IList<RecipeIngredient> RecipeIngredients { get; set; }
     }
 }

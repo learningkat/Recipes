@@ -1,5 +1,5 @@
 ﻿@page
-@model RecipesVersion2.Pages.Recipes.DetailsModel
+@model RecipesVersion2.Pages.Recipes.RecipeDisplayModel
 
 @{
     ViewData["Title"] = "Details";
@@ -40,6 +40,8 @@
         @foreach (var item in Model.Recipe.RecipeIngredients)
         {
             <p>
+                @Html.DisplayFor(modelItem => item.Quantity)
+                @Html.DisplayFor(modelItem => item.Unit.UnitName)
                 @Html.DisplayFor(modelItem => item.RecipeIngredientName.IngredientName)
             </p>
 }

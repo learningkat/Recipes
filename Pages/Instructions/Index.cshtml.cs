@@ -23,7 +23,12 @@ namespace RecipesVersion2.Pages.Instructions
 
         public async Task OnGetAsync()
         {
-            Instruction = await _context.Instruction.ToListAsync();
+            Instruction = await _context.Instruction
+                .Include(c => c.Recipe)
+                //.ThenInclude(c => c.RecipeName)
+                .ToListAsync();
+           
+            
         }
     }
 }

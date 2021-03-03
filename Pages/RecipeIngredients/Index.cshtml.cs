@@ -23,7 +23,9 @@ namespace RecipesVersion2.Pages.RecipeIngredients
 
         public async Task OnGetAsync()
         {
-            RecipeIngredient = await _context.RecipeIngredients.ToListAsync();
+            RecipeIngredient = await _context.RecipeIngredients
+                
+                .ToListAsync();
         }
     }
 }

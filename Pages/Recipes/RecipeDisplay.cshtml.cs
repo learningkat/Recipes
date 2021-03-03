@@ -10,11 +10,11 @@ using RecipesVersion2.Models;
 
 namespace RecipesVersion2.Pages.Recipes
 {
-    public class DetailsModel : PageModel
+    public class RecipeDisplayModel : PageModel
     {
         private readonly RecipesVersion2.Data.RecipesVersion2Context _context;
 
-        public DetailsModel(RecipesVersion2.Data.RecipesVersion2Context context)
+        public RecipeDisplayModel(RecipesVersion2.Data.RecipesVersion2Context context)
         {
             _context = context;
         }
@@ -28,17 +28,21 @@ namespace RecipesVersion2.Pages.Recipes
                 return NotFound();
             }
 
-            Recipe = await _context.Recipe
-                .Include(c => c.RecipeIngredients)
-                .ThenInclude(c => c.RecipeIngredientName)
-                .FirstOrDefaultAsync(m => m.Id == id)
-                ;
+			Recipe =  await _context.Recipe
+				.Include(c => c.RecipeIngredients)
+				.ThenInclude(c => c.RecipeIngredientName)
+				.Include(c => c.RecipeIngredients)
+				.ThenInclude(c => c.Unit)
+				.FirstOrDefaultAsync(m => m.Id == id)
+				;
 
-            if (Recipe == null)
+			if (Recipe == null)
             {
                 return NotFound();
             }
             return Page();
         }
+       
+		}
     }
-}
+
