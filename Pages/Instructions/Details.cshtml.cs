@@ -19,7 +19,7 @@ namespace RecipesVersion2.Pages.Instructions
             _context = context;
         }
 
-        public Instruction Instruction { get; set; }
+        public Models.Instruction Instruction { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

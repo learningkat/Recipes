@@ -37,14 +37,23 @@
         </dd>
     </dl>
     <h3>Ingredients</h3>
-        @foreach (var item in Model.Recipe.RecipeIngredients)
-        {
-            <p>
-                @Html.DisplayFor(modelItem => item.Quantity)
-                @Html.DisplayFor(modelItem => item.Unit.UnitName)
-                @Html.DisplayFor(modelItem => item.RecipeIngredientName.IngredientName)
-            </p>
-}
+    @foreach (var item in Model.Recipe.RecipeIngredients)
+    {
+        <p>
+            @Html.DisplayFor(modelItem => item.Quantity)
+            @Html.DisplayFor(modelItem => item.Unit.UnitName)
+            @Html.DisplayFor(modelItem => item.RecipeIngredientName.IngredientName)
+        </p>
+    }
+    <h3>Instructions</h3>
+        <ol>
+    @foreach (var item in Model.Recipe.Instruction)
+    {
+            <li>
+                @Html.DisplayFor(modelItem => item.InstructionText)
+            </li>
+    }
+        </ol>
 </div>
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.Recipe.Id">Edit</a> |

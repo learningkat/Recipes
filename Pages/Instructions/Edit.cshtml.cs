@@ -21,7 +21,7 @@ namespace RecipesVersion2.Pages.Instructions
         }
 
         [BindProperty]
-        public Instruction Instruction { get; set; }
+        public Models.Instruction Instruction { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

@@ -33,13 +33,18 @@ namespace RecipesVersion2.Pages.Recipes
 				.ThenInclude(c => c.RecipeIngredientName)
 				.Include(c => c.RecipeIngredients)
 				.ThenInclude(c => c.Unit)
+                .Include(c => c.Instruction)
 				.FirstOrDefaultAsync(m => m.Id == id)
 				;
+            //makes Insturction list in order, had to change from ilist to ienumerable
+            Recipe.Instruction = Recipe.Instruction.OrderBy(c => c.Order);
 
-			if (Recipe == null)
+            if (Recipe == null)
             {
                 return NotFound();
             }
+
+
             return Page();
         }
        

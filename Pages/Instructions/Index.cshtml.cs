@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using RecipesVersion2.Data;
 using RecipesVersion2.Models;
 
-namespace RecipesVersion2.Pages.Instructions
+namespace RecipesVersion2.Pages.Instruction
 {
     public class IndexModel : PageModel
     {
@@ -19,13 +19,12 @@ namespace RecipesVersion2.Pages.Instructions
             _context = context;
         }
 
-        public IList<Instruction> Instruction { get;set; }
+        public IList<Models.Instruction> Instruction { get;set; }
 
         public async Task OnGetAsync()
         {
             Instruction = await _context.Instruction
                 .Include(c => c.Recipe)
-                //.ThenInclude(c => c.RecipeName)
                 .ToListAsync();
            
             

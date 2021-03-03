@@ -25,7 +25,7 @@ namespace RecipesVersion2.Pages.Instructions
         }
 
         [BindProperty]
-        public Instruction Instruction { get; set; }
+        public Models.Instruction Instruction { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
