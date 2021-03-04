@@ -24,26 +24,11 @@ namespace RecipesVersion2.Pages.Recipes
         public async Task OnGetAsync()
         {
             Recipe = await _context.Recipe
-                .Include(c => c.RecipeIngredients)
-                .ThenInclude(c => c.RecipeIngredientName)
+                .Include(c => c.Course)
+                .ThenInclude(c => c.ImagePath)
+                .Include(c => c.Cuisine)
                 .ToListAsync();
 
-            Recipe.Count();
-        }
-
-    
-  //      public bool Cuisine(int recipeId)
-		//{
-  //          bool IsIndian = false;
-
-		//	if (Recipe[recipeId].Cuisine.ToString().ToLower().Contains("indian"))
-		//	{
-		//		_ = IsIndian == true;
-		//	}
-
-  //          return IsIndian;
-		//}
-
-        
+        }   
     }
 }

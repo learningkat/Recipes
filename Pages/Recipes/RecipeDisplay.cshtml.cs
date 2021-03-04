@@ -34,6 +34,9 @@ namespace RecipesVersion2.Pages.Recipes
 				.Include(c => c.RecipeIngredients)
 				.ThenInclude(c => c.Unit)
                 .Include(c => c.Instruction)
+                .Include(c => c.Course)
+                .Include(c => c.Cuisine)
+              
 				.FirstOrDefaultAsync(m => m.Id == id)
 				;
             //makes Insturction list in order, had to change from ilist to ienumerable, should read up on those.

@@ -3,63 +3,23 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RecipesVersion2.Data;
 
 namespace RecipesVersion2.Migrations
 {
     [DbContext(typeof(RecipesVersion2Context))]
-    partial class RecipesVersion2ContextModelSnapshot : ModelSnapshot
+    [Migration("20210304181800_CourseCuisineTables")]
+    partial class CourseCuisineTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.2");
-
-            modelBuilder.Entity("RecipesVersion2.Models.Course", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("CourseName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImagePath")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageURL")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Course");
-                });
-
-            modelBuilder.Entity("RecipesVersion2.Models.Cuisine", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("CuisineName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImagePath")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageURL")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Cuisine");
-                });
 
             modelBuilder.Entity("RecipesVersion2.Models.Ingredient", b =>
                 {
@@ -141,10 +101,10 @@ namespace RecipesVersion2.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int?>("CourseId")
+                    b.Property<int>("Course")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CuisineId")
+                    b.Property<int>("Cuisine")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DateAdded")
@@ -157,10 +117,6 @@ namespace RecipesVersion2.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CourseId");
-
-                    b.HasIndex("CuisineId");
 
                     b.ToTable("Recipe");
                 });
@@ -218,21 +174,6 @@ namespace RecipesVersion2.Migrations
                     b.Navigation("RecipeIngredientName");
 
                     b.Navigation("Unit");
-                });
-
-            modelBuilder.Entity("RecipesVersion2.Models.Recipes", b =>
-                {
-                    b.HasOne("RecipesVersion2.Models.Course", "Course")
-                        .WithMany()
-                        .HasForeignKey("CourseId");
-
-                    b.HasOne("RecipesVersion2.Models.Cuisine", "Cuisine")
-                        .WithMany()
-                        .HasForeignKey("CuisineId");
-
-                    b.Navigation("Course");
-
-                    b.Navigation("Cuisine");
                 });
 
             modelBuilder.Entity("RecipesVersion2.Models.Unit", b =>

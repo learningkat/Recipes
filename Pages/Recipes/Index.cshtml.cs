@@ -24,8 +24,8 @@ namespace RecipesVersion2.Pages.Recipes
         public async Task OnGetAsync()
         {
             Recipe = await _context.Recipe
-                .Include(c => c.RecipeIngredients)
-                .ThenInclude(c => c.RecipeIngredientName)
+                .Include(c => c.Cuisine)
+                .Include(c => c.Course)
                 .ToListAsync();
 
         }

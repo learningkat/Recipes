@@ -23,5 +23,7 @@ namespace RecipesVersion2.Data
         public DbSet<RecipesVersion2.Models.RecipeIngredient> RecipeIngredients { get; set; }
 
         public DbSet<RecipesVersion2.Models.Unit> Unit { get; set; }
+        public DbSet<RecipesVersion2.Models.Course> Course { get; set; }
+        public DbSet<RecipesVersion2.Models.Cuisine> Cuisine { get; set; }
     }
 }

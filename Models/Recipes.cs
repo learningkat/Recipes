@@ -13,9 +13,9 @@ namespace RecipesVersion2.Models
 
         [DataType(DataType.Date)]
         public DateTime DateAdded { get; set; }
-        public string Cuisine { get; set; }
-        public string Course { get; set; }
-        public string Url { get; set; }
+        public Cuisine Cuisine { get; set; }
+        public Course Course { get; set; }
+        public string SourceUrl { get; set; }
         public IList<RecipeIngredient> RecipeIngredients { get; set; }
         public IEnumerable<Instruction> Instruction { get; set; }
     }
