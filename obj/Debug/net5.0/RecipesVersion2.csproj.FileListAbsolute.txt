@@ -191,3 +191,4 @@ C:\Users\AcademyPgh\source\repos\RecipesVersion2\obj\Debug\net5.0\Razor\Pages\Un
 C:\Users\AcademyPgh\source\repos\RecipesVersion2\obj\Debug\net5.0\Razor\Pages\Units\Index.cshtml.g.cs
 C:\Users\AcademyPgh\source\repos\RecipesVersion2\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\AcademyPgh\source\repos\RecipesVersion2\obj\Debug\net5.0\Razor\Pages\Recipes\RecipeDisplay.cshtml.g.cs
+C:\Users\AcademyPgh\source\repos\RecipesVersion2\obj\Debug\net5.0\Razor\Pages\Recipes\RecipeGallery.cshtml.g.cs

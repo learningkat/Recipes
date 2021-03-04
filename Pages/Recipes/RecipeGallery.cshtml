@@ -1,0 +1,31 @@
+﻿@page
+@model RecipesVersion2.Pages.Recipes.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Recipe Gallery</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+    
+    @foreach (var item in Model.Recipe) {
+    
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img src="~/img/corner-table-1168607_640.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">@Html.DisplayFor(modelItem => item.RecipeName)</h5>
+                <p class="card-text">Added: @Html.DisplayFor(modelItem => item.DateAdded).  Cuisine: @Html.DisplayFor(modelItem => item.Cuisine).  Course:  @Html.DisplayFor(modelItem => item.Course)</p>
+                <a asp-page="./RecipeDisplay" asp-route-id="@item.Id" class="hide stretched-link"></a>
+            </div>
+        </div>
+    </div>
+
+}
+</div>
+

@@ -36,7 +36,7 @@ namespace RecipesVersion2.Pages.Recipes
                 .Include(c => c.Instruction)
 				.FirstOrDefaultAsync(m => m.Id == id)
 				;
-            //makes Insturction list in order, had to change from ilist to ienumerable
+            //makes Insturction list in order, had to change from ilist to ienumerable, should read up on those.
             Recipe.Instruction = Recipe.Instruction.OrderBy(c => c.Order);
 
             if (Recipe == null)
