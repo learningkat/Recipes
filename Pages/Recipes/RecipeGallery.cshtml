@@ -4,30 +4,35 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1>Recipe Gallery</h1>
+@section styles{
+    <link rel="Stylesheet" href="@Href("~/css/RecipeGalleryStyle.css")" />
+}
+@*<h1>Recipe Gallery</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
-</p>
+</p>*@
 
-<div class="row row-cols-1 row-cols-md-2 g-4">
+<div id="recipeGallery" class="row row-cols-1 row-cols-md-2 g-4">
 
-    @foreach (var item in Model.Recipe) {
+    @foreach (var item in Model.Recipe)
+    {
 
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-            
-            <img src="~/img/@Html.DisplayFor(modelItem => item.Cuisine.ImagePath)" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">@Html.DisplayFor(modelItem => item.RecipeName)</h5>
-                <p class="card-text">Added: @Html.DisplayFor(modelItem => item.DateAdded).  Cuisine: @Html.DisplayFor(modelItem => item.Cuisine.CuisineName).  Course:  @Html.DisplayFor(modelItem => item.Course.CourseName)</p>
-                <a asp-page="./RecipeDisplay" asp-route-id="@item.Id" class="hide stretched-link"></a>
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+
+                <img src="~/img/@Html.DisplayFor(modelItem => item.Cuisine.ImagePath)" class="card-img-top " alt="...">
+                <img src="~/icon/@Html.DisplayFor(modelItem => item.Course.ImagePath)" class="card-img-overlay">
+                <div class="card-body">
+                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.RecipeName)</h5>
+                    <p class="card-text">Cuisine: @Html.DisplayFor(modelItem => item.Cuisine.CuisineName)</p>  
+                    <p>Course:  @Html.DisplayFor(modelItem => item.Course.CourseName)</p>
+                    <a asp-page="./RecipeDisplay" asp-route-id="@item.Id" class="hide stretched-link"></a>
+                </div>
             </div>
         </div>
-    </div>
 
-}
+    }
 </div>
 
 

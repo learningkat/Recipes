@@ -1,0 +1,35 @@
+﻿:root {
+    --cardRadius: 10px;
+    --white: #ffffff;
+}
+
+
+
+.card-img-top {
+    height: 200px;
+    width: 290px;
+
+    position: relative;
+    width: inherit;
+    object-fit: cover;
+    width: 100%;
+    
+    filter: brightness(60%);
+    /*opacity: .5;*/
+
+    border-top-left-radius: var(--cardRadius);
+    border-top-right-radius: var(--cardRadius);
+    
+    
+    
+}
+.card {
+    border-radius: var(--cardRadius);
+    margin: 20px 0px 20px 0px !important;
+}
+.card-img-overlay {
+    width: 250px;
+    max-height: 150px;
+    margin: 0 auto;
+    margin-top: 25px !important;
+}

@@ -1,11 +1,49 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+
+@font-face {
+    font-family: 'Fascinate-Regular';
+    src: url('../font/Fascinate-Regular.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'CrimsonText-Regular';
+    src: url('../font/CrimsonText-Regular.ttf') format('truetype');
+}
+body {
+    background-image: linear-gradient( #ffff66 0%, #e2e236 100%);
+    font-family: CrimsonText-Regular;
+    font-size: 1.5rem;
+}
+#title {
+    margin: 200px 0px 200px 0px;
+
+}
+#title a {
+        font-family: Fascinate-Regular;
+        font-size: 100px;
+        color: #c70505;
+    }
+#title a:hover{
+       text-decoration: none;
+}
+a#headerTitle{
+    font-family: Fascinate-Regular;
+    font-size: 25px;
+    color: #c70505;
+}
+
+
+
+
+
+
+
+    a.navbar-brand {
+        white-space: normal;
+        text-align: center;
+        word-break: break-all;
+    }
 
 /* Provide sufficient contrast against white background */
 a {
