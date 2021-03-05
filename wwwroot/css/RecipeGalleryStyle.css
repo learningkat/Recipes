@@ -1,32 +1,49 @@
 ﻿:root {
     --cardRadius: 10px;
-    --white: #ffffff;
+    --cream: #fefecd;
+    --red: #c70505;
 }
 
+@font-face {
+    font-family: 'Fascinate-Regular';
+    src: url('../font/Fascinate-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'CrimsonText-Bold';
+    src: url('../font/CrimsonText-Bold.ttf') format('truetype');
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: CrimsonText-Bold;
+    color: var(--red);
+}
 
 
 .card-img-top {
     height: 200px;
     width: 290px;
-
     position: relative;
     width: inherit;
     object-fit: cover;
     width: 100%;
-    
     filter: brightness(60%);
     /*opacity: .5;*/
-
     border-top-left-radius: var(--cardRadius);
     border-top-right-radius: var(--cardRadius);
-    
-    
-    
 }
+
 .card {
     border-radius: var(--cardRadius);
     margin: 20px 0px 20px 0px !important;
+    background-color: var(--cream);
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.card:hover {
+    /*box-shadow: 0 4px 5px 0 var(--cream), 0 6px 20px 0 var(--cream);*/
+    box-shadow: none !important;
+}
+
 .card-img-overlay {
     width: 250px;
     max-height: 150px;

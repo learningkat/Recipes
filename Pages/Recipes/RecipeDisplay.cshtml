@@ -4,70 +4,76 @@
 @{
     ViewData["Title"] = "Details";
 }
+@section styles{
+    <link rel="Stylesheet" href="@Href("~/css/RecipeDisplayStyle.css")" />
+}
 
-<div class="row">
+
+<div class="row mt-1">
     <div class="col">
         <h1>@Html.DisplayFor(model => model.Recipe.RecipeName)</h1>
     </div>
-    <div class="col"><h2>@Html.DisplayFor(model => model.Recipe.Cuisine.CuisineName) | @Html.DisplayFor(model => model.Recipe.Course.CourseName)</h2>
-        </div>
+    <div class="col text-right">
+        <h2 class="mb-0 mt-2">@Html.DisplayFor(model => model.Recipe.Cuisine.CuisineName) | @Html.DisplayFor(model => model.Recipe.Course.CourseName)</h2>
+    </div>
     <hr />
     @*<dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Recipe.RecipeName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Recipe.RecipeName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Recipe.DateAdded)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Recipe.DateAdded)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Recipe.Cuisine)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Recipe.Cuisine.CuisineName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Recipe.Course)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Recipe.Course.CourseName)
-        </dd>
-    </dl>*@
-    </div>
-    <div class="row">
-        <div class="col">
-            <h3>Ingredients</h3>
-            <ul>
-                @foreach (var item in Model.Recipe.RecipeIngredients)
-                {
-                    <li>
-                        @Html.DisplayFor(modelItem => item.Quantity)
-                        @Html.DisplayFor(modelItem => item.Unit.UnitName)
-                        @Html.DisplayFor(modelItem => item.RecipeIngredientName.IngredientName)
-                    </li>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Recipe.RecipeName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Recipe.RecipeName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Recipe.DateAdded)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Recipe.DateAdded)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Recipe.Cuisine)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Recipe.Cuisine.CuisineName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Recipe.Course)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Recipe.Course.CourseName)
+            </dd>
+        </dl>*@
+</div>
+<hr class="rounded">
+<div id="RecipeDisplay" class="row">
+    <div class="col-4">
+        <h3>Ingredients</h3>
+        <ul>
+            @foreach (var item in Model.Recipe.RecipeIngredients)
+            {
+                <li>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                    @Html.DisplayFor(modelItem => item.Unit.UnitName)
+                    @Html.DisplayFor(modelItem => item.RecipeIngredientName.IngredientName)
+                </li>
             }
-                </ul>
-        </div>
-        <div class="col">
-            <h3>Instructions</h3>
-            <ol>
-                @foreach (var item in Model.Recipe.Instruction)
-                {
-                    <li>
-                        @Html.DisplayFor(modelItem => item.InstructionText)
-                    </li>
-                }
-            </ol>
-        </div>
+        </ul>
+    </div>
+    <div class="col-8">
+        <h3>Instructions</h3>
+        <ul>
+            @foreach (var item in Model.Recipe.Instruction)
+            {
+                <li>
+                    @Html.DisplayFor(modelItem => item.InstructionText)
+                </li>
+            }
+        </ul>
     </div>
 </div>
-<div>
+
+@*<div>
     <a asp-page="./Edit" asp-route-id="@Model.Recipe.Id">Edit</a> |
     <a asp-page="./Index">Back to List</a>
-</div>
+</div>*@
 

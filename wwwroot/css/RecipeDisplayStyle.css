@@ -1,0 +1,70 @@
+﻿:root {
+    --cream: #fefecd;
+    --red: #c70505;
+    --yellow1: #ffff66;
+    --yellow2: #ffef00;
+}
+
+@font-face {
+    font-family: 'Fascinate-Regular';
+    src: url('../font/Fascinate-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'CrimsonText-Regular';
+    src: url('../font/CrimsonText-Regular.ttf') format('truetype');
+}
+
+
+h1, h2, h3 {
+    font-family: Fascinate-Regular;
+    color: var(--red);
+}
+
+hr.rounded {
+    border-top: 5px solid var(--red);
+    border-radius: 5px;
+}
+
+#RecipeDisplay .col-4, #RecipeDisplay .col-8 {
+/*    background-color: var(--cream) .5;
+    opacity: .5;
+*/
+    border-radius: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.col-4, .col-8{
+    padding-right: 50px;
+}
+#RecipeDisplay .col-4::after, #RecipeDisplay .col-8::after {
+        content: '';
+
+        height: 110%;
+        background-color: var(--cream);
+        opacity: 0.5;
+        position: absolute;
+        top: -5%;
+        left: 0;
+        z-index: -1;
+        border-radius: 20px;
+    }
+    #RecipeDisplay .col-4::after {
+        width: 90%;
+    }
+    #RecipeDisplay .col-8::after {
+        width: 100%;
+    }
+
+ul {
+    list-style: none; /* Remove default bullets */
+}
+
+    ul li::before {
+        content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+        color: var(--red); /* Change the color */
+        font-weight: bold; /* If you want it to be bold */
+        display: inline-block; /* Needed to add space between the bullet and the text */
+        width: 1em; /* Also needed for space (tweak if needed) */
+        margin-left: -1em; /* Also needed for space (tweak if needed) */
+    }

@@ -10,6 +10,8 @@
 
 What this project will do next/eventually:
 
+- Be equally mobile friendly.
+
 - Have a single input page.
 
 - Single page editing of a recipe.
@@ -35,9 +37,11 @@ What this project will do next/eventually:
 
 
 
+
+
 Attributions:
 
-Photograph attribution
+Photograph attributions:
 
 burger pic
 Image by <a href="https://pixabay.com/photos/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=731298">Free-Photos</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=731298">Pixabay</a>
